@@ -1,98 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Logic Wordle</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Logic Wordle Easy Mode</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>Logic Wordle - Easy Mode</h1>
 
-<h1>Logic Wordle</h1>
-<div id="message-box" class="hidden"></div>
+  <!-- Message Box -->
+  <div id="message-box" class="hidden"></div>
 
-<!-- GAME GRID -->
-<div class="grid">
-  <!-- 6 guess rows -->
-  <div class="row">
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-  </div>
-  <div class="row">
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-  </div>
-  <div class="row">
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-  </div>
-  <div class="row">
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-  </div>
-  <div class="row">
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-  </div>
-  <div class="row">
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-  </div>
-</div>
-
-<div class="keyboard">
-
-  <!-- ROW 1 -->
-  <div class="keyboard-row">
-    <button>∀</button>
-    <button>∃</button>
-    <button>:</button>
-
-    <span class="gap"></span>
-
-    <button>x</button>
-    <button>y</button>
-    <button>z</button>
-
-    <span class="gap"></span>
-
-    <button>∈</button>
-    <button>ℝ</button>
-    <button>ℕ</button>
+  <!-- Grid -->
+  <div class="grid">
+    <!-- 6 rows, 7 cells each -->
+    <div class="row"><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div></div>
+    <div class="row"><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div></div>
+    <div class="row"><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div></div>
+    <div class="row"><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div></div>
+    <div class="row"><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div></div>
+    <div class="row"><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div></div>
   </div>
 
-  <!-- ROW 2 -->
-  <div class="keyboard-row">
-    <button>=</button>
-    <button>&lt;</button>
-    <button>&gt;</button>
-    <button>≤</button>
-    <button>≥</button>
-    <button>≠</button>
+  <!-- On-screen Keyboard -->
+  <div class="keyboard">
+    <!-- Row 1: Quantifiers, variables, membership -->
+    <div class="key-row">
+      <button onclick="handleKey('∀')">∀</button>
+      <button onclick="handleKey('∃')">∃</button>
+      <span class="spacer"></span>
+      <button onclick="handleKey('x')">x</button>
+      <button onclick="handleKey('y')">y</button>
+      <button onclick="handleKey('z')">z</button>
+      <span class="spacer"></span>
+      <button onclick="handleKey('∈')">∈</button>
+      <button onclick="handleKey('ℝ')">ℝ</button>
+      <button onclick="handleKey('ℕ')">ℕ</button>
+    </div>
+
+    <!-- Row 2: Relations -->
+    <div class="key-row">
+      <button onclick="handleKey('=')">=</button>
+      <button onclick="handleKey('<')"><</button>
+      <button onclick="handleKey('>')">></button>
+      <button onclick="handleKey('≤')">≤</button>
+      <button onclick="handleKey('≥')">≥</button>
+      <button onclick="handleKey('≠')">≠</button>
+    </div>
+
+    <!-- Row 3: Numbers -->
+    <div class="key-row">
+      <button onclick="handleKey('0')">0</button>
+      <button onclick="handleKey('1')">1</button>
+      <button onclick="handleKey('2')">2</button>
+      <button onclick="handleKey('3')">3</button>
+      <button onclick="handleKey('4')">4</button>
+      <button onclick="handleKey('5')">5</button>
+      <button onclick="handleKey('6')">6</button>
+      <button onclick="handleKey('7')">7</button>
+      <button onclick="handleKey('8')">8</button>
+      <button onclick="handleKey('9')">9</button>
+    </div>
+
+    <!-- Control Row -->
+    <div class="key-row">
+      <button onclick="handleKey('Backspace')">Del</button>
+      <button onclick="handleKey('Enter')">Enter</button>
+    </div>
   </div>
 
-  <!-- ROW 3 -->
-  <div class="keyboard-row">
-    <button>0</button>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-  </div>
-
-  <!-- ROW 4 -->
-  <div class="keyboard-row">
-    <button>Submit</button>
-    <button>Delete</button>
-  </div>
-
-</div>
-<script src="game.js"></script>
-
-
+  <script src="game.js"></script>
 </body>
 </html>

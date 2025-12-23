@@ -1,72 +1,53 @@
 body {
-  font-family: "Cambria Math", "Times New Roman", serif;
+  font-family: Arial, sans-serif;
   text-align: center;
-  background: #fafafa;
-}
-
-h1 {
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 .grid {
-  display: grid;
-  grid-template-rows: repeat(6, 1fr);
-  gap: 8px;
-  justify-content: center;
-  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
 }
 
 .row {
-  display: grid;
-  grid-template-columns: repeat(8, 50px);
-  gap: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 
 .cell {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: 2px solid #ccc;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 22px;
-  background: white;
-}
-
-/* Keyboard */
-.keyboard {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
   align-items: center;
+  font-size: 20px;
 }
 
-.keyboard-row {
-  display: flex;
-  justify-content: center;
-  margin: 6px 0;
+.row.invalid .cell {
+  border-color: red;
+  background-color: #f8d7da;
 }
 
-.gap {
-  width: 20px;
+.cell.green {
+  background-color: #6aaa64;
+  color: white;
+  border-color: #6aaa64;
 }
 
-button {
-  font-size: 18px;
-  padding: 10px 14px;
-  border-radius: 6px;
-  border: none;
-  background: #ddd;
-  cursor: pointer;
+.cell.yellow {
+  background-color: #c9b458;
+  color: white;
+  border-color: #c9b458;
 }
 
-button:hover {
-  background: #ccc;
-}
-
-button.wide {
-  padding: 10px 24px;
-  font-weight: bold;
+.cell.gray {
+  background-color: #787c7e;
+  color: white;
+  border-color: #787c7e;
 }
 
 #message-box {
@@ -84,6 +65,28 @@ button.wide {
   display: none;
 }
 
-.row.invalid {
-  background-color: #f8d7da;
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.key-row {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.spacer {
+  width: 10px;
+}
+.key {
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  user-select: none;
 }
