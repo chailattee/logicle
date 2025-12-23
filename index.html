@@ -8,58 +8,60 @@
 <body>
 
 <h1>Logic Wordle</h1>
+<div id="message-box" class="hidden"></div>
 
 <!-- GAME GRID -->
 <div class="grid">
   <!-- 6 guess rows -->
   <div class="row">
     <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
   </div>
   <div class="row">
     <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+  </div>
+  <div class="row">
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
     <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
   </div>
   <div class="row">
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-  </div>
-  <div class="row">
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
     <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
   </div>
   <div class="row">
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
     <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
   </div>
   <div class="row">
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
     <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
   </div>
 </div>
 
-<!-- KEYBOARD -->
 <div class="keyboard">
 
-  <div class="key-row">
+  <!-- ROW 1 -->
+  <div class="keyboard-row">
     <button>∀</button>
     <button>∃</button>
     <button>:</button>
-  </div>
 
-  <div class="key-row">
+    <span class="gap"></span>
+
     <button>x</button>
     <button>y</button>
     <button>z</button>
-  </div>
 
-  <div class="key-row">
+    <span class="gap"></span>
+
     <button>∈</button>
     <button>ℝ</button>
     <button>ℕ</button>
   </div>
 
-  <div class="key-row">
+  <!-- ROW 2 -->
+  <div class="keyboard-row">
     <button>=</button>
     <button>&lt;</button>
     <button>&gt;</button>
@@ -68,18 +70,29 @@
     <button>≠</button>
   </div>
 
-  <div class="key-row">
+  <!-- ROW 3 -->
+  <div class="keyboard-row">
+    <button>0</button>
     <button>1</button>
     <button>2</button>
     <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
   </div>
 
-  <div class="key-row">
-    <button class="wide">Submit</button>
-    <button class="wide">Delete</button>
+  <!-- ROW 4 -->
+  <div class="keyboard-row">
+    <button>Submit</button>
+    <button>Delete</button>
   </div>
 
 </div>
+<script src="game.js"></script>
+
 
 </body>
 </html>

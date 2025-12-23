@@ -41,9 +41,14 @@ h1 {
   align-items: center;
 }
 
-.key-row {
+.keyboard-row {
   display: flex;
-  gap: 6px;
+  justify-content: center;
+  margin: 6px 0;
+}
+
+.gap {
+  width: 20px;
 }
 
 button {
@@ -62,4 +67,23 @@ button:hover {
 button.wide {
   padding: 10px 24px;
   font-weight: bold;
+}
+
+#message-box {
+  margin: 10px auto;
+  padding: 10px 14px;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.hidden {
+  display: none;
+}
+
+.row.invalid {
+  background-color: #f8d7da;
 }
