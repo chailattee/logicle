@@ -4,14 +4,7 @@ let currentColIndex = 0;
 let gameOver = false;
 const MAX_COLS = 7;
 
-// Easy Mode puzzles: arrays of 7 symbols each
-const puzzles = [
-  ["∀","x","∈","ℕ","5","=","x"],
-  ["∃","y","∈","ℝ","7","<","y"],
-  ["∀","z","∈","ℕ","3","≠","z"],
-  ["∃","x","∈","ℝ","2","≥","x"]
-  // add as many as you want
-];
+let targetStatement = getDailyPuzzle();
 
 // Flip operator helper
 function flipOperator(op) {
@@ -148,11 +141,6 @@ function handleKey(key) {
   cells[currentColIndex].textContent = key;
   currentColIndex++;
 }
-
-//EXAMPLE TARGET STATEMENT
-let targetStatement = ["∀","x","∈","ℕ","5","=","x"]; // example target
-/////////////////////////////////////////////////////////
-
 
 // Submit row
 
