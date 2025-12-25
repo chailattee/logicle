@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 20px;
@@ -70,11 +71,54 @@ body {
   flex-direction: column;
   gap: 6px;
   margin-top: 10px;
+=======
+  font-family: "Cambria Math", "Times New Roman", serif;
+  text-align: center;
+  background: #fafafa;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  gap: 6px;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: white;
+}
+
+/* Keyboard */
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+>>>>>>> 7294e10be2d815c3fe526df12390d56429fa81f9
 }
 
 .key-row {
   display: flex;
   gap: 6px;
+<<<<<<< HEAD
   justify-content: center;
 }
 
@@ -90,3 +134,24 @@ body {
   cursor: pointer;
   user-select: none;
 }
+=======
+}
+
+button {
+  font-size: 18px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ccc;
+}
+
+button.wide {
+  padding: 10px 24px;
+  font-weight: bold;
+}
+>>>>>>> 7294e10be2d815c3fe526df12390d56429fa81f9
