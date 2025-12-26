@@ -165,6 +165,18 @@ body {
   display: none;
 }
 
+#play-again {
+  margin: 20px auto;
+  display: block; /* ensures button takes its own line */
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#play-again:hover {
+  background-color: #2f674b;
+}
+
 .keyboard {
   display: flex;
   flex-direction: column;

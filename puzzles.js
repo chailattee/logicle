@@ -33,7 +33,7 @@ for (const q of QUANTIFIERS) {
 }
 
 
-// deterministic daily picker
+//  daily picker
 function getDailyPuzzle() {
   const start = new Date(2025, 11, 24); // months indexed from 0 - 11
   const today = new Date();
@@ -41,4 +41,10 @@ function getDailyPuzzle() {
     Math.floor((today - start) / (1000 * 60 * 60 * 24));
 
   return EASY_PUZZLES[daysSince % EASY_PUZZLES.length];
+}
+
+// random picker
+function pickRandomPuzzle() {
+  const index = Math.floor(Math.random() * EASY_PUZZLES.length);
+  return EASY_PUZZLES[index];
 }

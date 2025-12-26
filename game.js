@@ -3,15 +3,17 @@ let currentRowIndex = 0;
 let currentColIndex = 0;
 let gameOver = false;
 const MAX_COLS = 7;
+let isWin = false;
 
-// Easy Mode puzzles: arrays of 7 symbols each
-const puzzles = [
-  ["∀","x","∈","ℕ","5","=","x"],
-  ["∃","y","∈","ℝ","7","<","y"],
-  ["∀","z","∈","ℕ","3","≠","z"],
-  ["∃","x","∈","ℝ","2","≥","x"]
-  // add as many as you want
-];
+let targetStatement = pickRandomPuzzle();
+
+const playBtn = document.getElementById("play-again");
+playBtn.classList.add("hidden");
+
+playBtn.addEventListener("click", () => {
+  resetGame();
+});
+
 
 // Flip operator helper
 function flipOperator(op) {
@@ -149,11 +151,6 @@ function handleKey(key) {
   currentColIndex++;
 }
 
-//EXAMPLE TARGET STATEMENT
-let targetStatement = ["∀","x","∈","ℕ","5","=","x"]; // example target
-/////////////////////////////////////////////////////////
-
-
 // Submit row
 
 function submitRow() {
@@ -216,7 +213,11 @@ function submitRow() {
   if (isWin) {
     showMessage("Correct! Logically equivalent statement.");
     gameOver = true;
+
+     // Show Play Again button
+    playBtn.classList.remove("hidden");
     return;
+
   }
 
   // Move to next row
@@ -229,7 +230,11 @@ function submitRow() {
       `Game over. Correct statement: ${targetStatement.join(" ")}`
     );
     gameOver = true;
+
+    playBtn.classList.remove("hidden");
+    return;
   }
+
 }
 
 
@@ -275,6 +280,34 @@ function hideMessage() {
   const box = document.getElementById("message-box");
   box.classList.add("hidden");
 }
+
+function resetGame() {
+    // Reset game state
+    currentRowIndex = 0;
+    currentColIndex = 0;
+    gameOver = false;
+
+    // Clear all grid cells
+    const rows = document.querySelectorAll(".row");
+    rows.forEach(row => {
+        const cells = row.querySelectorAll(".cell");
+        cells.forEach(cell => {
+            cell.textContent = "";
+            cell.classList.remove("green", "gray", "yellow");
+        });
+    });
+
+    // Hide message box
+    hideMessage();
+
+    // pick a new puzzle (random)
+    targetStatement = puzzles[Math.floor(Math.random() * puzzles.length)];
+
+    // Hide Play Again button
+    const playBtn = document.getElementById("play-again");
+    playBtn.classList.add("hidden");
+}
+
 
 // Physical keyboard support
 document.addEventListener("keydown", (event) => {
