@@ -6,35 +6,29 @@
   <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <meta charset="UTF-8">
-  <title>Logic Wordle Easy Mode</title>
+  <title>Logicle Easy Mode</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="header">
-  <h1>Logicle</h1>
+  <h1>Logicle (Easy Mode)</h1>
 </header>
 
 
-  <!-- Message Box -->
   <div id="message-box" class="hidden"></div>
 
-  <!-- Help Button -->
 <div id="help-button">?</div>
 
-<!-- Modal Box -->
 <div id="help-modal" class="modal">
   <div class="modal-content">
     <span id="close-help" class="close">&times;</span>
     <h2>How to Play</h2>
-    <p>Welcome to the Logic Puzzle game!</p>
-    <ul>
-      <li> Welcome to Logicle! Your goal is to guess the correct logical statement in 6 tries.</li>
-      <li>Enter statements using the keyboard or on-screen buttons.</li>
-      <li>a -> ∀, e -> ∃, b -> ∈, r -> ℝ, n -> ℕ, l -> ≤, g -> ≥, ! -> ≠</li>
-      <li>Click Enter to submit a row.</li>
-      <li>Green tiles are correct; gray tiles are incorrect.</li>
-      <li>Easy mode: one variable per expression</li>
-    </ul>
+    <h4>Your goal is to guess the correct logical statement in 6 tries.</h4>
+    <h4>Enter statements using the keyboard or on-screen buttons.</h4>
+    <h4>Special characters: ∀(a), ∃(e), ∈(b), ℝ(r), ℕ(n), ≤(l), ≥(g), ≠(!)</h4>
+    <h4>Click Enter to submit a row.</h4>
+    <h4>Green tiles are correct; gray tiles are incorrect.</h4>
+    <h4>Easy mode: one variable per expression</h4>
   </div>
 </div>
 
@@ -92,7 +86,7 @@
 
     <!-- Control Row -->
     <div class="key-row">
-      <button onclick="handleKey('Backspace')">Del</button>
+      <button onclick="handleKey('Backspace')">Delete</button>
       <button onclick="handleKey('Enter')">Enter</button>
     </div>
   </div>
