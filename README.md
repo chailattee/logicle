@@ -16,7 +16,7 @@ Inspired by Wordle, it provides an engaging way to practice logical reasoning an
 
 ## Play Online
 
-[Logicle on GitHub Pages](https://yourusername.github.io/repo-name/)
+[Logicle on GitHub Pages](https://chailattee.github.io/logicle/)
 
 ## Development Process
 
